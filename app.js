@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('mysql');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -27,6 +28,25 @@ app.use(function(req, res, next) {
   next(createError(404));
 });
 
+// SQL Connection
+
+
+   var con = mysql.createConnection({
+   host: "localhost",
+   user: "root",
+   password: "",
+   database: "wholesalemgmt",
+  });
+
+ con.connect(function(err) {
+   if(err) 
+   {
+       throw err;
+	}
+  console.log("Connected to Wholesale Management Database!");
+ });
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -39,3 +59,5 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+console.log('Server running at Port 3000');
+console.log('Press CTRL+C to stop the server')
