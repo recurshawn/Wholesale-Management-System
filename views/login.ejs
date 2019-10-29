@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Go back to <a href="./">Index</a> page.</p>
+    <div class="jumbotron">
+      <h3>Login to <%= title %></h3>
+    <form action="auth" method="POST">
+      <label for="exampleInputEmail1">Username</label>
+      <input type="text" class="form-control" placeholder="Enter username" name="username" required>
+
+      <label for="exampleInputPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>
+
+      <button type="submit" class="btn btn-primary">Log in</button>
+    </form>
+  </div>
+  </body>
+</html>
