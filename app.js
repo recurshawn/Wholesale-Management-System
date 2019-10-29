@@ -9,6 +9,7 @@ var mysql = require('mysql');
 //Routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var productRouter = require('./routes/product')
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
 
@@ -27,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Using routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/product', productRouter);
 app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
 
