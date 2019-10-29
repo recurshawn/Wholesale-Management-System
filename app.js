@@ -67,4 +67,4 @@ app.use(function(err, req, res, next) {
 
 module.exports = app;
 console.log('Server running at Port 3000');
-console.log('Press CTRL+C to stop the server')
+console.log('Press CTRL+C to stop the server');
