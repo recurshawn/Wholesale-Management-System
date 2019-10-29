@@ -56,6 +56,8 @@ app.use(function(req, res, next) {
  });
 
 
+
+
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -66,6 +68,9 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+
 
 module.exports = app;
 console.log('Server running at Port 3000');
