@@ -16,9 +16,9 @@ var con = mysql.createConnection({
 
 con.connect(function (err) {
   if (err) throw err;
-  con.query("SELECT * FROM manufacturer", function (err, result, fields) {
+  con.query("SELECT * FROM retailer", function (err, result, fields) {
     if (err) throw err;
-    manufacturers = result;
+    retailers = result;
     console.log(result);
   });
 });
@@ -26,9 +26,7 @@ con.connect(function (err) {
 
 router.get('/', function (req, res, next) {
 
-  res.render('manufacturer', { title: 'Manufacturers', data: manufacturers });
+  res.render('retailer', { title: 'Retailers', data: retailers });
 });
-
-
 
 module.exports = router;

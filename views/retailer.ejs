@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+</head>
+
+<body>
+    <div class="container">
+        <h1>Retailers List</h1>
+        <h2>Add Retailer to List</h2>
+        <form action="retailer_add" method="POST">
+            <div class="form-group">
+
+                <label for="exampleInputEmail1">Retailer Id</label>
+                <input type="text" class="form-control" placeholder="Enter Retailer Id" name="retailer_id" required>
+
+                <label for="exampleInputEmail1">Retailer Name</label>
+                <input type="text" class="form-control" placeholder="Enter Retailer Name" name="rname" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Balance</label>
+                <input type="text" class="form-control" placeholder="Enter Balance" name="balance" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Phone Number</label>
+                <input type="text" class="form-control" placeholder="Enter Phone Number" name="phone_no" required>
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail1">Category</label>
+                <input type="text" class="form-control" placeholder="Enter Category" name="category" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Retailer to Database</button>
+        </form>
+        <hr />
+        <h2>Retailers in List</h2>
+        <%if (data.length>0) { %>
+        <ul>
+            <%for(let retailer of data){%>
+            <h3>
+                <%=retailer.rname%>
+            </h3>
+            <p><strong>Balance:</strong> <%=retailer.balance%>
+                <br> <strong>Phone Number:</strong> <%=retailer.phone_no%>
+                <br><strong>Category:</strong> <%=retailer.category%></p>
+            <hr>
+            <%}%>
+      </ul>
+      <%}%>
+    </div>
+</body>
+
+</html>
