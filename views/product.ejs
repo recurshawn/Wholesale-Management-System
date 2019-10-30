@@ -11,12 +11,11 @@
   <div class="container">
     <h1>Product Inventory</h1>
     <h2>Add Product to Inventory</h2>
-    <form action="product_add" method="POST">
-  	    <div class="form-group">
+    <form action="/product_add" method="POST">
+      <div class="form-group">
         <label for="exampleInputEmail1">Product ID</label>
         <input type="text" class="form-control" placeholder="Enter Product ID" name="pid" required>
       </div>
-
 
       <div class="form-group">
         <label for="exampleInputEmail1">Product Name</label>
@@ -55,7 +54,7 @@
       <p><strong>Buying price:</strong> <%=product.buying_price%>
         <br> <strong>Selling Price:</strong> <%=product.selling_price%>
         <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
-        <hr>
+      <hr>
       <%}%>
       </ul>
       <%}%>

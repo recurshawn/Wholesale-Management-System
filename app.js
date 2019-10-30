@@ -12,6 +12,8 @@ var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var manufacturerRouter = require('./routes/manufacturer');
 var retailerRouter = require('./routes/retailer');
+var addProductRouter = require('./routes/product_add');
+
 
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
@@ -35,12 +37,14 @@ app.use('/product', productRouter);
 app.use('/manufacturer', manufacturerRouter);
 app.use('/retailer', retailerRouter);
 app.use('/login', loginRouter);
+app.use('/product_add', addProductRouter);
+
 //app.use('./auth', authRouter);
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+// app.use(function(req, res, next) {
+//   next(createError(404));
+// });
 
 // SQL Connection
 
