@@ -17,6 +17,7 @@ var addProductRouter = require('./routes/product_add');
 
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
+  
 
 var app = express();
 
