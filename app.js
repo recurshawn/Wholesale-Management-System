@@ -11,6 +11,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var productRouter = require('./routes/product');
 var manufacturerRouter = require('./routes/manufacturer');
+var retailerRouter = require('./routes/retailer');
+
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
   
@@ -32,6 +34,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/product', productRouter);
 app.use('/manufacturer', manufacturerRouter);
+app.use('/retailer', retailerRouter);
 app.use('/login', loginRouter);
 
 //app.use('./auth', authRouter);
