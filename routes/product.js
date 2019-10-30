@@ -13,7 +13,7 @@ var con = mysql.createConnection({
 });
 
 
-router.post('product_add',(req, res, next) =>{
+router.post('/product_add',(req, res, next) =>{
 
 	console.log(req['body']);
 
