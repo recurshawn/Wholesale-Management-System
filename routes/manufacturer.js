@@ -18,7 +18,7 @@ router.get('/', function (req, res, next) {
       if (err) throw err;
       manufacturers = result;
       console.log(result);
-      res.render('product', { title: 'Inventory', data: products, success: {add: q.add, delete: q.delete, update: q.update, man: q.man } });
+      res.render('manufacturer', { title: 'Manufacturers List', data: products, success: {add: q.add, delete: q.delete, update: q.update, man: q.man } });
     });
   });
 });
