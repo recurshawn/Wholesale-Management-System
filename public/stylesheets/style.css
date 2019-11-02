@@ -1,8 +1,26 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+nav {
+  margin-bottom: 50px;
 }
 
-a {
-  color: #00B7FF;
+h1 {
+  text-align: center;
 }
+
+.card
+{
+  width: 250px;
+  
+  margin: 1.66%;
+  float: left;
+}
+body{
+  background: black;
+}
+.container
+{
+  background: white;
+}
+/* .card-body{
+  padding: auto;
+  background-color: rgb(192, 192, 192);
+} */

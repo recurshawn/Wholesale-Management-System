@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Wholesale DB</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -16,23 +16,23 @@
       
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#">Home</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Products <span class="sr-only">(current)</span></a>
+            <li class="nav-item active">
+              <a class="nav-link" href="">Products <span class="sr-only">(current)</span></a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Manufacturers</a>
+                <a class="nav-link" href="../manufacturer">Manufacturers</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Retailers</a>
+                <a class="nav-link" href="../retailer">Retailers</a>
             </li>
 
             <li class="nav-item">
-                <a class="nav-link" href="#">Payments</a>
+                <a class="nav-link" href="../payment">Payments</a>
             </li>
 
           </ul>
@@ -81,9 +81,11 @@
     <hr />
     <h2>Current Products in Inventory</h2>
     <%if (data.length>0) { %>
-    <ul>
-      <%for(let product of data){%>
-      <h3>
+    
+     
+      <%for(let product of data){%> 
+       
+      <!-- <h3>
         <%=product.pname%>
       </h3>
       <p><strong>Buying price:</strong> <%=product.buying_price%>
@@ -91,9 +93,21 @@
         <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
       <button type="button" class="btn btn-warning">Update</button>
       <button type="button" class="btn btn-danger">Delete</button>
-      <hr>
+      <hr> -->
+
+      <div class="card" >
+          <div class="card-body">
+            <h5 class="card-title"><%=product.pname%></h5>
+            <p class="card-text"><strong>Buying price:</strong> <%=product.buying_price%>
+              <br> <strong>Selling Price:</strong> <%=product.selling_price%>
+              <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p></p>
+              <button type="button" class="btn btn-warning">Update</button>
+              <button type="button" class="btn btn-danger">Delete</button>
+          </div>
+        </div>
+
       <%}%>
-      </ul>
+    
       <%}%>
   </div>
 </body>

@@ -1,31 +1,29 @@
 var express = require('express');
 var router = express.Router();
+var url = require('url');
 var mysql = require('mysql');
-
+var con = require('../data/con');
 
 var products;
 
-var con = mysql.createConnection({
-	host: "localhost",
-	user: "root",
-	password: "",
-	database: "wholesalemgmt"
-});
+
 
 
 con.connect(function (err) {
 	if (err) throw err;
-	con.query("SELECT * FROM product", function (err, result, fields) {
-		if (err) throw err;
-		products = result;
-		console.log(result);
-	});
 });
 
 
 router.get('/', function (req, res, next) {
-
-	res.render('product', { title: 'Inventory', data: products, success: {add: false, delete: false, update: false} });
+	var qdata = url.parse(req.url, true);
+	var q = qdata.query;
+	//console.log(q);
+	con.query("SELECT * FROM product", function (err, result, fields) {
+		if (err) throw err;
+		products = result;
+		console.log(result);
+		res.render('product', { title: 'Inventory', data: products, success: {add: q.add, delete: q.delete, update: q.update, prod: q.prod } });
+	});
 });
 
 
