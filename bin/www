@@ -9,8 +9,8 @@ var http = require('http');
  * Get port from environment and store in Express.
  * unnecessary since assumption made to be port 3000
  */
-// var port = parseInt('3000', 10);
-app.set('port', 3000);//port > 0 ? port : false);
+var port = parseInt('3000', 10);
+app.set('port', port);//port > 0 ? port : false);
 /**
  * Create HTTP server.
  */
