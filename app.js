@@ -47,7 +47,7 @@ app.use('/product_add', addProductRouter);
 //   next(createError(404));
 // });
 
-// SQL Connection
+// FOR SQL Connection, check data/con.js
 
 
    var con = mysql.createConnection({
