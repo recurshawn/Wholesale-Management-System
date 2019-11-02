@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 var mysql = require('mysql');
-//const con = require('../data/con.js');
+//const conn = require('../data/conn.js');
 
-const con = mysql.createConnection({
+const conn = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
@@ -33,14 +33,14 @@ router.post('/',(req, res, next) =>{
 
 		res.redirect('/product');
 	});*/
-	con.connect(function(err){
+	conn.connect(function(err){
 		if(err) throw err;
 		console.log("connected");
 		
 		sql = "INSERT INTO product (pname,buying_price,selling_price,quantity,category) values ("+prods+");";
 
 	
-		con.query(sql, function(err,result){
+		conn.query(sql, function(err,result){
 			if(err) throw err;
 			console.log(2);
 			console.log("1 record inserted");

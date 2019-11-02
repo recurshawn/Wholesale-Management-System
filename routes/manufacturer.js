@@ -5,7 +5,7 @@ var mysql = require('mysql');
 
 var manufacturers;
 
-var con = mysql.createConnection({
+var conn = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
@@ -14,9 +14,9 @@ var con = mysql.createConnection({
 
 
 
-con.connect(function (err) {
+conn.connect(function (err) {
   if (err) throw err;
-  con.query("SELECT * FROM manufacturer", function (err, result, fields) {
+  conn.query("SELECT * FROM manufacturer", function (err, result, fields) {
     if (err) throw err;
     manufacturers = result;
     console.log(result);

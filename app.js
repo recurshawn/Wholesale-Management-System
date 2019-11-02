@@ -50,14 +50,14 @@ app.use('/product_add', addProductRouter);
 // FOR SQL Connection, check data/con.js
 
 
-   var con = mysql.createConnection({
+   var conn = mysql.createConnection({
    host: "localhost",
    user: "root",
    password: "",
    database: "wholesalemgmt",
   });
 
- con.connect(function(err) {
+ conn.connect(function(err) {
    if(err) 
    {
        throw err;
