@@ -1,0 +1,12 @@
+# ignore all of the node_modules
+# they get auto installed by reading the contents of package.json
+# All you need to do is type `npm install` after a fresh pull from repo
+node_modules/
+
+# ignore package-lock.json
+# it's used by NPM for housekeeping tasks, and is not directly required
+# by the project
+package-lock.json
+
+# ignore sql dumps(for now)
+*.sql
