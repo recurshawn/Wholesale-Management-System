@@ -12,45 +12,38 @@ const conn = mysql.createConnection({
 
 var prods;
 var sql;
-router.post('/',(req, res, next) =>{
+router.post('/', (req, res, next) => {
 
-	
+	var abc2 = "'" + req['body'].pname + "'";
+	var abc3 = parseInt(req['body'].buying_price);
+	var abc4 = parseInt(req['body'].selling_price);
+	var abc5 = parseInt(req['body'].quantity);
+	var abc6 = "'" + req['body'].category + "'";
 
-		var abc2 = "'"+req['body'].pname+"'";
-		var abc3 = parseInt(req['body'].buying_price);
-		var abc4 = parseInt(req['body'].selling_price);
-		var abc5 = parseInt(req['body'].quantity);
-		var abc6 = "'"+req['body'].category+"'";
-		
-		prods = [abc2, abc3, abc4, abc5, abc6];
+	prods = [abc2, abc3, abc4, abc5, abc6];
 
-		// console.log(product);
+	// console.log(product);
 
 	console.log('Inserting');
-	/*
-	con.query('INSERT INTO PRODUCT SET ?', product, function(err, result)=>{
-		console.log("Success!");
+	sql = "INSERT INTO product (pname,buying_price,selling_price,quantity,category) values (" + prods + ");";
 
-		res.redirect('/product');
-	});*/
-	conn.connect(function(err){
-		if(err) throw err;
+
+	conn.connect(function (err) {
+		if (err) throw err;
 		console.log("connected");
-		
-		sql = "INSERT INTO product (pname,buying_price,selling_price,quantity,category) values ("+prods+");";
 
-	
-		conn.query(sql, function(err,result){
-			if(err) throw err;
+
+		conn.query(sql, function (err, result) {
+			if (err) throw err;
 			console.log(2);
 			console.log("1 record inserted");
 			console.log(result);
-			res.redirect('/product?add=true&prod='+abc2);
+			res.redirect('/product?add=true&prod=' + abc2);
 			//res.render('product', {title: 'Inventory', success: { add: true, prod : abc2}});
 		});
 	});
-	
-	
+
+
 
 });
 

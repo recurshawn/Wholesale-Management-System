@@ -11,12 +11,8 @@
   <div class="container">
     <h1>Manufacturers List</h1>
     <h2>Add Manufacturer to List</h2>
-    <form action="manu_add" method="POST">
+    <form action="manufacturer_add" method="POST">
       <div class="form-group">
-
-
-        <label for="exampleInputEmail1">Manufacturer Id</label>
-        <input type="text" class="form-control" placeholder="Enter Manufacturer Id" name="manu_id" required>
 
         <label for="exampleInputEmail1">Manufacturer Name</label>
         <input type="text" class="form-control" placeholder="Enter Manufacturer Name" name="mname" required>
@@ -43,13 +39,16 @@
     <%if (data.length>0) { %>
     <ul>
       <%for(let manu of data){%>
-      <h3>
-        <%=manu.mname%>
-      </h3>
-      <p><strong>Address:</strong> <%=manu.address%>
-        <br> <strong>Phone Number:</strong> <%=manu.phone_no%>
-        <br><strong>Category:</strong> <%=manu.category%></p>
-        <hr>
+        <div class="card" >
+            <div class="card-body">
+                <h5 class="card-title"><%=manu.mname%></h5>
+                <p class="card-text"><strong>Address:</strong> <%=manu.address%>
+                  <br> <strong>Phone no:</strong> <%=manu.phone_no%>
+                  <br><strong>Category:</strong> <%=manu.category%></p></p>
+                  <button type="button" class="btn btn-info">Update</button>
+                  <button type="button" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
       <%}%>
       </ul>
       <%}%>

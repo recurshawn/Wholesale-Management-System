@@ -9,11 +9,14 @@ var mysql = require('mysql');
 //Routes
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
 var productRouter = require('./routes/product');
 var manufacturerRouter = require('./routes/manufacturer');
 var retailerRouter = require('./routes/retailer');
-var addProductRouter = require('./routes/product_add');
 
+var addProductRouter = require('./routes/product_add');
+var addManufacturerRouter = require('./routes/manufacturer_add');
+var addRetailerRouter = require('./routes/retailer_add');
 
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
@@ -34,12 +37,16 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Using routes
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
 app.use('/product', productRouter);
 app.use('/manufacturer', manufacturerRouter);
 app.use('/retailer', retailerRouter);
-app.use('/login', loginRouter);
-app.use('/product_add', addProductRouter);
 
+app.use('/product_add', addProductRouter);
+app.use('/manufacturer_add', addManufacturerRouter);
+app.use('/retailer_add', addRetailerRouter);
+
+app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
 
 // catch 404 and forward to error handler

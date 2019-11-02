@@ -6,13 +6,9 @@ var conn = require('../data/conn');
 
 var products;
 
-
-
-
 conn.connect(function (err) {
 	if (err) throw err;
 });
-
 
 router.get('/', function (req, res, next) {
 	var qdata = url.parse(req.url, true);
@@ -25,7 +21,5 @@ router.get('/', function (req, res, next) {
 		res.render('product', { title: 'Inventory', data: products, success: {add: q.add, delete: q.delete, update: q.update, prod: q.prod } });
 	});
 });
-
-
 
 module.exports = router;
