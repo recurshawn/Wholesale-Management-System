@@ -25,7 +25,7 @@ con.connect(function (err) {
 
 router.get('/', function (req, res, next) {
 
-	res.render('product', { title: 'Inventory', data: products });
+	res.render('product', { title: 'Inventory', data: products, success: {add: false, delete: false, update: false} });
 });
 
 
