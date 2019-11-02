@@ -23,7 +23,7 @@ router.post('/', (req, res, next) => {
 		var abc5 = parseInt(req['body'].phone_no);
 		var abc6 = "'" + req['body'].category + "'";
 
-		mans = [abc2, abc3, abc4, abc5, abc6];
+		mans = [abc2, abc3, abc5, abc6];
 
 
 		console.log('Inserting');
@@ -35,7 +35,7 @@ router.post('/', (req, res, next) => {
 			console.log(2);
 			console.log("1 record inserted");
 			console.log(result);
-			res.redirect('/manufacturer?add=true&man=' + prod2);
+			res.redirect('/manufacturer?add=true&man=' + abc2);
 			
 		});
 	});
