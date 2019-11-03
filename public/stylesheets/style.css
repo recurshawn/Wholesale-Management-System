@@ -14,9 +14,15 @@ h1 {
   float: left;
 }
 
+/* .bod{
+  background-color: rgb(228, 228, 228);
+} */
+
 .container
 {
   background: white;
+  border-radius: 10px;
+  padding: 20px;
 }
 /* .card-body{
   padding: auto;
