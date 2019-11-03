@@ -138,8 +138,12 @@
           <br> <strong>Selling Price:</strong> <%=product.selling_price%>
           <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
         </p>
-        <button type="button" class="btn btn-info">Update</button>
-        <button type="button" class="btn btn-danger">Delete</button>
+        <form action="/product_update" method="post">
+          <input type="submit" class="btn btn-info" name="id" value="<%=product.id%>" />
+      </form>
+      <form action="/product_delete" method="post">
+        <input type="submit" class="btn btn-danger" name="id" value="<%=product.id%>" />
+    </form>
       </div>
     </div>
 
