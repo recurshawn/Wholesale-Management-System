@@ -8,16 +8,59 @@
 </head>
 
 <body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="..">Wholesale DB</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="..">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../product">Products</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../manufacturer">Manufacturers</a>
+                </li>
+
+                <li class="nav-item active">
+                    <a class="nav-link" href="../retailer">Retailers</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="../payment">Payments</a>
+                </li>
+
+            </ul>
+
+
+
+        </div>
+    </nav>
+
+
     <div class="container">
         <h1>Retailers List</h1>
         <h2>Add Retailer to List</h2>
         <form action="retailer_add" method="POST">
+
+            <% if (success.add) { %>
+            <div class="alert alert-success" role="alert">
+                <%=success.retailer %> was successfully added to the retailers list!
+                <br>Add another one, view the list below or update or delete a retailer.
+            </div>
+            <% } %>
+
+
             <div class="form-group">
 
-                <label for="exampleInputEmail1">Retailer Id</label>
-                <input type="text" class="form-control" placeholder="Enter Retailer Id" name="retailer_id" required>
-
-                <label for="exampleInputEmail1">Retailer Name</label>
+            <label for="exampleInputEmail1">Retailer Name</label>
                 <input type="text" class="form-control" placeholder="Enter Retailer Name" name="rname" required>
             </div>
 
@@ -39,18 +82,20 @@
         </form>
         <hr />
         <h2>Retailers in List</h2>
-        <%if (data.length>0) { %>
-        <ul>
-            <%for(let retailer of data){%>
-            <h3>
-                <%=retailer.rname%>
-            </h3>
-            <p><strong>Balance:</strong> <%=retailer.balance%>
-                <br> <strong>Phone Number:</strong> <%=retailer.phone_no%>
-                <br><strong>Category:</strong> <%=retailer.category%></p>
-            <hr>
-            <%}%>
-      </ul>
+        <%if (data.length > 0) { %>
+        <%for(let retailer of data){%>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><%=retailer.rname%></h5>
+                <p class="card-text"><strong>Balance:</strong> <%=retailer.balance%>
+                    <br> <strong>Phone no:</strong> <%=retailer.phone_no%>
+                    <br><strong>Category:</strong> <%=retailer.category%></p>
+                </p>
+                <button type="button" class="btn btn-info">Update</button>
+                <button type="button" class="btn btn-danger">Delete</button>
+            </div>
+        </div>
+        <%}%>
       <%}%>
     </div>
 </body>
