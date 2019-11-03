@@ -13,8 +13,8 @@ conn.connect(function (err) {
 router.post('/', function (req, res, next) {
 	var qdata = url.parse(req.url, true);
 	var q = qdata.query;
-    var quan;
-    if(q.quantity)
+    var quan = q.quantity;
+    if(q.quant)
 	conn.query("SELECT * FROM product WHERE quantity >= " +quan, function (err, result, fields) {
 		if (err) throw err;
 		products = result;

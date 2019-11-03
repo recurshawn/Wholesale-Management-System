@@ -14,9 +14,10 @@ router.get('/', function (req, res, next) {
 	var qdata = url.parse(req.url, true);
 	var q = qdata.query;
 	//console.log(q);
-	if(q.quantity)
+	if(q.quant)
 	{
-		quan = parseInt(req['body'].quantity);
+		quan = q.quantity;
+		console.log(quan);
 		conn.query("SELECT * FROM product WHERE quantity >= " + quan, function (err, result, fields) {
 			if (err) throw err;
 			products = result;
