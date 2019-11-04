@@ -37,9 +37,6 @@
         </li>
 
       </ul>
-
-
-
     </div>
   </nav>
 
@@ -83,76 +80,62 @@
     <h2>Current Products in Inventory</h2>
     <h4>Search by</h4>
     <div class="row">
-      <div class="col-4">
-          <form action="/product_search" method="POST">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Product Name</label>
-                <input type="text" class="form-control" placeholder="Enter name" name="product_name" required>
-              </div>
-              <button type="submit" class="btn btn-success">Find product(s)</button>
-            </form>
-      </div>
-      <div class="col-4">
-          <form action="/product" method="POST">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Category</label>
-              <input type="number" class="form-control" placeholder="Enter category" name="category" required>
-            </div>
-            <button type="submit" class="btn btn-success">Find category</button>
-          </form>
-      </div>
-      <div class="col-4">
-          <form action="/product" method="GET">
-              <div class="form-group">
-                <label for="exampleInputEmail1">Quantity needed</label>
-                <input type="number" class="form-control"  placeholder="Enter quantity" name="quantity" required>
-              </div>
-              <button type="submit" class="btn btn-success">Products more than quantity</button>
-            </form>
-        
-      </div>
-      </div>
-      <hr>
-      <div class="row">
-          <div class="col-4">
-              <form action="/product?profit=true" method="GET">
-                <p>Profitability</p>
-                <p>Should be sold for more than it was purchased</p>
-                <button type="submit" class="btn btn-success">Unprofitable Products</button>
-              </form>
+    <form action="/product_search" method="GET">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Product Name</label>
+          <input type="text" class="form-control" placeholder="Enter name" id="product_name" name="product_name">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Category</label>
+          <input type="text" class="form-control" placeholder="Enter category" id="category" name="category">
+        </div>
+          <div class="form-group">
+            <input type="submit" value="Search" class="btn btn-success">
           </div>
+    </form>
     </div>
-    
+  <!--
+          <hr>
+          <div class="row">
+              <div class="col-4">
+                  <form action="/product?profit=true" method="GET">
+                    <p>Profitability</p>
+                    <p>Should be sold for more than it was purchased</p>
+                    <button type="submit" class="btn btn-success">Unprofitable Products</button>
+                  </form>
+              </div>
+        </div>
+      -->
 
 
-    <hr>
+  <hr>
 
-   
-    <%if (data.length>0) { %>
-    <%for(let product of data){%>
 
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><%=product.pname%></h5>
-        <p class="card-text"><strong>Buying price:</strong> <%=product.buying_price%>
-          <br> <strong>Selling Price:</strong> <%=product.selling_price%>
-          <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
-        </p>
-        <form action="/product_update" method="GET">
-          <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-primary">Update</button>
-        </form>
-        <br>
+  <%if (data.length>0) { %>
+  <%for(let product of data){%>
+
+  <div class="card">
+    <div class="card-body">
+      <h5 class="card-title"><%=product.pname%></h5>
+      <p class="card-text"><strong>Buying price:</strong> <%=product.buying_price%>
+        <br> <strong>Selling Price:</strong> <%=product.selling_price%>
+        <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
+      </p>
+      <form action="/product_update" method="GET">
+        <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-primary">Update</button>
+      </form>
+      <br>
       <form action="/product_delete" method="POST">
-        <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-danger">Delete</button>  
-        </form>
-      </div>
+        <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-danger">Delete</button>
+      </form>
     </div>
+  </div>
 
-    <%}%>
+  <%}%>
     
       <%} else {%>
-        <p>No products found</p>
-        <%}%>
+  <p>No products found</p>
+  <%}%>
   </div>
 </body>
 

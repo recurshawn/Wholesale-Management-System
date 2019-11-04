@@ -20,6 +20,7 @@ var addRetailerRouter = require('./routes/retailer_add');
 
 var updateProductRouter = require('./routes/product_update');
 var deleteProductRouter = require('./routes/product_delete');
+var searchProductRouter = require('./routes/product_search');
 
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
@@ -51,6 +52,7 @@ app.use('/retailer_add', addRetailerRouter);
 
 app.use('/product_update', updateProductRouter);
 app.use('/product_delete', deleteProductRouter);
+app.use('/product_search', searchProductRouter);
 
 app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
