@@ -47,14 +47,7 @@
   <div class="container">
     <h1>Manufacturers List</h1>
     <h2>Add Manufacturer to List</h2>
-    <form action="manufacturer_add" method="POST">
-
-        <% if (success.add) { %>
-          <div class="alert alert-success" role="alert">
-              <%=success.man %> was successfully added to the manufacturers list! 
-            <br>Add another one, view the list below or update or delete a manufacturer.
-          </div>
-          <% } %>
+    <form action="manufacturer_update" method="POST">
 
       <div class="form-group">
         <label for="exampleInputEmail1">Manufacturer Name</label>
@@ -77,29 +70,6 @@
       </div>
       <button type="submit" class="btn btn-primary">Add Manufacturer to Database</button>
     </form>
-    <hr />
-    <h2>Manufacturers in List</h2>
-    <%if (data.length>0) { %>
-    <ul>
-      <%for(let manu of data){%>
-        <div class="card" >
-            <div class="card-body">
-                <h5 class="card-title"><%=manu.mname%></h5>
-                <p class="card-text"><strong>Address:</strong> <%=manu.address%>
-                  <br> <strong>Phone no:</strong> <%=manu.phone_no%>
-                  <br><strong>Category:</strong> <%=manu.category%></p></p>
-                  <form action="/manufacturer_update" method="GET">
-                  <button type="submit"  name="id" value="<%=manu.manu_id%>" class="btn btn-info">Update</button>
-                </form>
-                <form action="/manufacturer_delete" method="POST">
-                  <button type="submit"  name="id" value="<%=manu.manu_id%>" class="btn btn-danger">Delete</button>
-                  </form>
-              </div>
-            </div>
-      <%}%>
-      </ul>
-      <%}%>
-  </div>
-</body>
-
-</html>
+    </div>
+    </body>
+    </html>
