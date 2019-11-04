@@ -16,7 +16,7 @@ router.get('/', function (req, res, next) {
 	//console.log(q);
 	//if(q.quant)
 	{
-		quan = q.quantity;
+		quan = q.quantity || 0;
 		console.log(quan);
 		conn.query("SELECT * FROM product WHERE quantity >= " + quan, function (err, result, fields) {
 			if (err) throw err;
