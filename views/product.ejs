@@ -139,11 +139,11 @@
           <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
         </p>
         <form action="/product_update" method="GET">
-          <button type="submit" name="id" value="<%=product.id%>" class="btn btn-primary">Update</button>
+          <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-primary">Update</button>
         </form>
         <br>
       <form action="/product_delete" method="GET">
-        <button type="submit" name="id" value="<%=product.id%>" class="btn btn-danger">Delete</button>  
+        <button type="submit" name="id" value="<%=product.product_id%>" class="btn btn-danger">Delete</button>  
         </form>
       </div>
     </div>
