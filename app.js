@@ -49,8 +49,8 @@ app.use('/product_add', addProductRouter);
 app.use('/manufacturer_add', addManufacturerRouter);
 app.use('/retailer_add', addRetailerRouter);
 
-app.use('./product_update', updateProductRouter);
-app.use('./product_delete', deleteProductRouter);
+app.use('/product_update', updateProductRouter);
+app.use('/product_delete', deleteProductRouter);
 
 app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
