@@ -25,7 +25,7 @@ router.get('/', (req, res, next) => {
 // PERFORM UPDATE
 router.post('/', (req, res, next) => {
 	console.log(req)
-	console.log(`Recieved for updating ${req.body}`)
+	//console.log(`Recieved for updating ${req.body}`)
 	var product = {
         product_id: req['body'].product_id,
         pname: req['body'].pname,

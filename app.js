@@ -15,12 +15,21 @@ var manufacturerRouter = require('./routes/manufacturer');
 var retailerRouter = require('./routes/retailer');
 
 var addProductRouter = require('./routes/product_add');
-var addManufacturerRouter = require('./routes/manufacturer_add');
-var addRetailerRouter = require('./routes/retailer_add');
-
 var updateProductRouter = require('./routes/product_update');
 var deleteProductRouter = require('./routes/product_delete');
 var searchProductRouter = require('./routes/product_search');
+
+var addManufacturerRouter = require('./routes/manufacturer_add');
+var updateManufacturerRouter = require('./routes/manufacturer_update');
+var deleteManufacturerRouter = require('./routes/manufacturer_delete');
+var searchManufacturerRouter = require('./routes/manufacturer_search');
+
+
+var addRetailerRouter = require('./routes/retailer_add');
+var updateRetailerRouter = require('./routes/retailer_update');
+var deleteRetailerRouter = require('./routes/retailer_delete');
+var searchRetailerRouter = require('./routes/retailer_search');
+
 
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
@@ -47,12 +56,21 @@ app.use('/manufacturer', manufacturerRouter);
 app.use('/retailer', retailerRouter);
 
 app.use('/product_add', addProductRouter);
-app.use('/manufacturer_add', addManufacturerRouter);
-app.use('/retailer_add', addRetailerRouter);
-
 app.use('/product_update', updateProductRouter);
 app.use('/product_delete', deleteProductRouter);
 app.use('/product_search', searchProductRouter);
+
+app.use('/manufacturer_add', addManufacturerRouter);
+app.use('/manufacturer_update', updateManufacturerRouter);
+app.use('/manufacturer_delete', deleteManufacturerRouter);
+app.use('/manufacturer_search', searchManufacturerRouter);
+
+
+app.use('/retailer_add', addRetailerRouter);
+app.use('/retailer_update', updateRetailerRouter);
+app.use('/retailer_delete', deleteRetailerRouter);
+app.use('/retailer_search', searchRetailerRouter);
+
 
 app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
