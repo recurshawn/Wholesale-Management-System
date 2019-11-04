@@ -102,10 +102,10 @@
           </form>
       </div>
       <div class="col-4">
-          <form action="/product?quant=true" method="GET">
+          <form action="/product" method="GET">
               <div class="form-group">
                 <label for="exampleInputEmail1">Quantity needed</label>
-                <input type="number" class="form-control" placeholder="Enter quantity" name="quantity" required>
+                <input type="number" class="form-control"  placeholder="Enter quantity" name="quantity" required>
               </div>
               <button type="submit" class="btn btn-success">Products more than quantity</button>
             </form>
@@ -139,17 +139,20 @@
           <br><strong>Quantity in Stock:</strong> <%=product.quantity%></p>
         </p>
         <form action="/product_update" method="post">
-          <input type="submit" class="btn btn-info" name="id" value="<%=product.id%>" />
-      </form>
+          <button type="submit" name="id" value="<%=product.id%>" class="btn btn-primary">Update</button>
+        </form>
+        <br>
       <form action="/product_delete" method="post">
-        <input type="submit" class="btn btn-danger" name="id" value="<%=product.id%>" />
-    </form>
+        <button type="submit" name="id" value="<%=product.id%>" class="btn btn-danger">Delete</button>  
+        </form>
       </div>
     </div>
 
     <%}%>
     
-      <%}%>
+      <%} else {%>
+        <p>No products found</p>
+        <%}%>
   </div>
 </body>
 

@@ -18,6 +18,9 @@ var addProductRouter = require('./routes/product_add');
 var addManufacturerRouter = require('./routes/manufacturer_add');
 var addRetailerRouter = require('./routes/retailer_add');
 
+var updateProductRouter = require('./routes/product_update');
+var deleteProductRouter = require('./routes/product_delete');
+
 var loginRouter = require('./routes/login');
 //var authRouter = require('./routes/auth');
   
@@ -45,6 +48,9 @@ app.use('/retailer', retailerRouter);
 app.use('/product_add', addProductRouter);
 app.use('/manufacturer_add', addManufacturerRouter);
 app.use('/retailer_add', addRetailerRouter);
+
+app.use('./product_update', updateProductRouter);
+app.use('./product_delete', deleteProductRouter);
 
 app.use('/login', loginRouter);
 //app.use('./auth', authRouter);
