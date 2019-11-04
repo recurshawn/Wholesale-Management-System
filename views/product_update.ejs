@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title><%= title %></title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+</head>
+
+<body class="bod">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="..">Wholesale DB</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="..">Home</a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="../product">Products</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../manufacturer">Manufacturers</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../retailer">Retailers</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../payment">Payments</a>
+        </li>
+
+      </ul>
+
+
+
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Product Inventory</h1>
+    <h2>Add Product to Inventory</h2>
+    <form action="/product_update" method="POST">
+      <input type="hidden" id="product_id" name="product_id" value="<%=main.product_id%>">
+      <div class="form-group">
+        <label for="exampleInputEmail1">Product Name</label>
+        <input type="text" class="form-control" placeholder="Enter Product" name="pname" value="<%=main.pname%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Buying Price</label>
+        <input type="number" class="form-control" placeholder="Enter Buying Price" name="buying_price" value="<%=main.buying_price%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Selling Price</label>
+        <input type="number" class="form-control" placeholder="Enter Selling Price" name="selling_price" value="<%=main.selling_price%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Quantity</label>
+        <input type="number" class="form-control" placeholder="Enter Quantity" name="quantity" value="<%=main.quantity%>" required>
+      </div>
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Category</label>
+        <input type="text" class="form-control" placeholder="Enter Category" name="category" value="<%=main.category%>" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Update Product</button>
+    </form>
+</body>
+
+</html>
